@@ -1,0 +1,33 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.labs-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-top: 20px;
+}
+
+.labs-list-item {
+	padding:10px;
+}
+
+.labs-list-item-content {
+	background-color: #ddd;
+	margin-bottom: 20px;
+	padding: 10px;
+	outline: solid 0px #999;
+	transition: all 0.3s;
+}
+
+.labs-list-item-content:hover {
+	background-color: #ccc;
+	transform: scale(1.02);
+	outline-width: 1px;
+	box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+}
