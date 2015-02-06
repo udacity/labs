@@ -25,6 +25,7 @@ html {
 	outline: solid 0px #fff;
 	transition: all 0.1s;
 	color: #666;
+	cursor: pointer;
 }
 
 .labs-list-item-content:hover {
