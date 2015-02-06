@@ -18,16 +18,20 @@ html {
 }
 
 .labs-list-item-content {
+	display: block;
 	background-color: #ddd;
 	margin-bottom: 20px;
-	padding: 10px;
-	outline: solid 0px #999;
-	transition: all 0.3s;
+	padding: 15px;
+	outline: solid 0px #fff;
+	transition: all 0.1s;
+	color: #666;
 }
 
 .labs-list-item-content:hover {
-	background-color: #ccc;
+	background-color: #cdf;
 	transform: scale(1.02);
-	outline-width: 1px;
+	outline: solid 1px #999;
 	box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+	color: #666;
+	text-decoration: none;
 }
