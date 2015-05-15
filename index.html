@@ -7,51 +7,120 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body class="responsive">
-	<div class="row section-inverse section-inverse-space text-inverse">
-		<div class="container banner-content text-center text-inverse" style="background-image: url(//lh6.ggpht.com/Ja_uuxV4m1gkk4lH9Y8pX_rcLr67wmsfTuKbj2n6GFfdArMXbdrZDw7MliiYJX1c19nKRIpJWNNerQndMCs=s0#w=1170&amp;h=422); min-height: 195px;">
-		        <div class="row banner-content">
-
-				<div class="col-xs-12">
-					<h1>Udacity Labs</h1>
-					<h2>Home of our Silly Experiments.</h2>
-					<p>Disclaimer: Nothing here is guaranteed to work properly!</p>
-				</div>
-			</div>
+	<div class="section-inverse section-inverse-space section-slim">
+    <div class="container banner-content text-inverse text-center" style="background-image: url(//lh6.ggpht.com/Ja_uuxV4m1gkk4lH9Y8pX_rcLr67wmsfTuKbj2n6GFfdArMXbdrZDw7MliiYJX1c19nKRIpJWNNerQndMCs=s0#w=1170&amp;h=422);">
+			<div class="row row-gap-huge">
+        <div class="col-xs-12">
+  				<h1>Udacity Labs</h1>
+  				<h2>Home of our Silly Experiments.</h2>
+  				<p>Disclaimer: Nothing here is guaranteed to work properly!</p>
+  			</div>
+      </div>
 		</div>
-	</div>
-	<div class="container">
-		<ul class="labs-list row">
-			<li class="labs-list-item col-sm-6">
-				<div data-href="https://www.youtube.com/watch?v=YXrdrnYNGAI" class="labs-list-item-content" target="_blank">
-					<h3 class="title h-slim-top">Production Bloopers</h3>
-					<div class="description">Every time you turn a camera on, somebody does something stupid. We'll prove it! <br>Here's one of our production blooper reels.</div>
-				</div>
-			</li>
-
-			<li class="labs-list-item col-sm-6">
-				<div data-href="http://www.udacity.me" class="labs-list-item-content" target="_blank">
-					<h3 class="title h-slim-top">Udacity.me</h3>
-					<div class="description">This site lists projects that our students have made in our courses. Click around &emdash; you'll find some cool things!</div>
-				</div>
-			</li>
-
-			<li class="labs-list-item col-sm-6">
-				<div data-href="https://www.youtube.com/watch?v=DQWI1kvmwRg" class="labs-list-item-content" target="_blank">
-					<h3 class="title h-slim-top">Overfitting Thriller</h3>
-					<div class="description">If you're a machine learning geek, you'll like our take on Michael Jackson's "Thriller." If you want to become a machine learning geek, check out our <a href="https://www.udacity.com/courses#!/data-science" target="_blank">Data Courses</a> and <a href="https://www.udacity.com/course/nd002" target="_blank">Data Analyst Nanodegree</a></div>
-				</div>
-			</li>
-
-			<li class="labs-list-item col-sm-6">
-				<div data-href="#" class="labs-list-item-content" target="_blank">
-					<h3 class="title h-slim-top">The Brainteaser Class</h3>
-					<div class="description">A few years back, we created a one-lesson course for Google IO. In the lesson, we talk about the Dining Philosophers Dilemma, and some concepts we can take away from the riddle.</div>
-				</div>
-			</li>
-		</ul>
+    <div class="row row-gap-medium"></div>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <div role="tabpanel">
+
+    <div class="container">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#code" aria-controls="code" role="tab" data-toggle="tab">Code</a></li>
+        <li role="presentation"><a href="#media" aria-controls="media" role="tab" data-toggle="tab">Media</a></li>
+        <li role="presentation"><a href="#courses" aria-controls="courses" role="tab" data-toggle="tab">Extra Courses</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="code">
+          <h2>Coding Experiments</h2>
+          <div class="row">
+            <div class="col-xs-12 section section-small section-standout-alternate">
+              <h3 class="title h-slim">Android Layout Visualizer</h3>
+              <div class="description"><a href="http://labs.udacity.com/android-layout/#/android/sandbox" target="_blank">Experiment with Android Layout XML</a> with this visualizer. This project directly supports Udacity's Intro to Android course, and the code is open source and <a href="https://github.com/udacity/android-layout">on GitHub</a>.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 section section-small">
+              <h3 class="title h-slim">Front-End Grading Engine</h3>
+              <div class="description">Cameron's <a href="https://github.com/udacity/frontend-grading-engine" target="_blank">Front-End Grading Engine</a> provides immediate feedback for front-end code</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="media">
+          <h2>Media Scraps</h2>
+          <div class="row">
+            <div class="col-xs-12 section section-small section-standout-alternate">
+              <h3 class="title h-slim">Production Bloopers</h3>
+              <div class="description">Every time you turn a camera on, somebody does something stupid. We'll prove it! <br>Here's one of our <a href="https://www.youtube.com/watch?v=YXrdrnYNGAI" target="_blank">production blooper reels</a>.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 section section-small">
+              <h3 class="title h-slim">Overfitting Thriller</h3>
+              <div class="description">If you're a machine learning geek, <a href="https://www.youtube.com/watch?v=DQWI1kvmwRg" target="_blank">you'll like our take</a> on Michael Jackson's "Thriller." If you want to become a machine learning geek, check out our <a href="https://www.udacity.com/courses#!/data-science" target="_blank">Data Courses</a> and <a href="https://www.udacity.com/course/nd002" target="_blank">Data Analyst Nanodegree</a></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 section section-small section-standout-alternate">
+              <h3 class="title h-slim">Production Bloopers</h3>
+              <div class="description">Every time you turn a camera on, somebody does something stupid. We'll prove it! <br>Here's one of our production blooper reels.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 section section-small">
+              <h3 class="title h-slim">Overfitting Thriller</h3>
+              <div class="description">If you're a machine learning geek, you'll like our take on Michael Jackson's "Thriller." If you want to become a machine learning geek, check out our <a href="https://www.udacity.com/courses#!/data-science" target="_blank">Data Courses</a> and <a href="https://www.udacity.com/course/nd002" target="_blank">Data Analyst Nanodegree</a></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 section section-small section-standout-alternate">
+              <h3 class="title h-slim">Production Bloopers</h3>
+              <div class="description">Every time you turn a camera on, somebody does something stupid. We'll prove it! <br>Here's one of our production blooper reels.</div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--<div role="tabpanel" class="tab-pane" id="media">
+          <ul class="labs-list row">
+            <li class="labs-list-item col-sm-6">
+              <div data-href="#" class="labs-list-item-content" target="_blank">
+                <h3 class="title h-slim-top">The Brainteaser Class</h3>
+                <div class="description">A few years back, we created a one-lesson course for Google IO. In the lesson, we talk about the Dining Philosophers Dilemma, and some concepts we can take away from the riddle.</div>
+              </div>
+            </li>
+
+            <li class="labs-list-item col-sm-6">
+              <div data-href="http://www.udacity.me" class="labs-list-item-content" target="_blank">
+                <h3 class="title h-slim-top">Udacity.me</h3>
+                <div class="description">This site lists projects that our students have made in our courses. Click around &emdash; you'll find some cool things!</div>
+              </div>
+            </li>
+
+          </ul>
+        </div>-->
+
+
+        <div role="tabpanel" class="tab-pane" id="courses">
+          ...
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="labs.js"></script>
 </body>
 </html>
