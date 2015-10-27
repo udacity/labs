@@ -9,6 +9,9 @@
       width: 100%;
       font-family: 'Roboto Slab', serif;
     }
+    pre {
+      width: 100%;
+    }
     .main-container {
       max-width: 40em;
       margin-left: auto;
@@ -113,7 +116,7 @@
 
     <h2 id="loading-tests">Loading Tests</h2>
 
-    <p>There are two main methods for load tests against a website. Take a look at the first two tests under Meta Tag:</p>
+    <p>There are two methods for loading tests against a website. Take a look at the first two tests under Meta Tag:</p>
 
     <div class="test-result correct">&lt;meta&gt; has name set to udacity-grader</div>
     <div class="test-result correct">&lt;meta&gt; has a content tag with a link to json</div>
@@ -124,14 +127,15 @@
 
     <pre>&lt;meta name="udacity-grader" content="relative_path_to_tests.json"&gt;</pre>
 
-    <p>Any tests from the JSON file referenced by the content tag will start running immediately after the page loads. This is how you should load tests against websites that you control. Of course, if you don't control a website, you can't add a meta tag. For that, there's the second method: loading from JSON. Here's a JSON file with some more tests.</p>
-
-    <a href="walkthrough.json" download>Download me!</a>
+    <p>Any tests from the JSON file referenced by the content tag will start running immediately after the page loads. This is how you should load tests against websites that you control. Of course, if you don't control a website, you can't add a meta tag. For that, there's the second method.</p>
     
     <h3 id="from-json">Load from JSON</h3>
-    <p>Now that you've downloaded the tests, click on the extension again, click 'Load Files' and choose the file that you just downloaded. You should see a lot more tests appear. This is how you load tests against websites that you <em>don't</em> own.</p>
 
-    <p>Great! So now you have a lot more tests. Here's how they work.</p>
+    <p>Here's a JSON file with some more tests. <a href="walkthrough.json" download>Download me!</a></p>
+    
+    <p>Now that you've downloaded the tests, click on the extension again, click 'Load Files' and choose the file that you just downloaded. You should see a few more tests appear. This is how you load tests against websites that you <em>don't</em> own.</p>
+
+    <p>Great! So now you have some tests. Here's how they work.</p>
 
     <h2 id="tests">Tests</h2>
     
@@ -142,7 +146,7 @@
     <p>Use DevTools to change the background to the color value shown. You should see the test get checked off when you do. Here's how the test was written:</p>
 
     <pre>
-      description: "Test 1 has correct bg color",
+      "description": "Test 1 has correct bg color",
       "definition": {
         "nodes": ".test1",
         "cssProperty": "backgroundColor",
@@ -150,7 +154,7 @@
       }
     </pre>
 
-    <p>This test checks the background color of <em>every</em> element of returned by the selector <code>.test1</code>. Unless you specify otherwise, <em>all</em> of the elements must pass the test. In this test, you got feedback on background color, but you can write tests against <em>any</em> CSS property.</p>
+    <p>This test checks the background color of <em>every</em> element of returned by the selector <code>.test1</code>. Unless you specify otherwise (using the <code>limit</code> property), <em>all</em> of the elements must pass the test. In this test, you got feedback on background color, but you can write tests against <em>any</em> CSS property.</p>
 
     <p>Some things to note:</p>
 
@@ -185,7 +189,7 @@
 
     <p>Ok, enough with the easy tests.</p>
 
-    <h3 id="test-layout">Test 3 - Layout with Width</h3>
+    <h3 id="test-layout">Test 3 - Layout Width</h3>
 
     <div class="test layout">
       <div class="flex-container">
@@ -195,7 +199,7 @@
       </div>
     </div>
 
-    <p>There are a few ways to write this test. This is how I did it:</p>
+    <p>Here's how I wrote this test:</p>
 
     <pre>
       "description": "Test 3 has larger columns",
@@ -208,11 +212,11 @@
 
     <p>You may need to resize your browser to a width greater than 640px to pass the test.</p>
 
-    <p>Really, what I'm checking here is that one of the columns has been deleted. They're in a flexbox and none of them could be larger than 159px if all three exist. I just wanted to show off that you've got range properties to take advantage of. Here, I used <code>isGreaterThan</code>, but <code>isLessThan</code> and <code>isInRange</code> are also available.</p>
+    <p>Really, what I'm checking here is that one of the columns has been deleted. They're in a flexbox and none of them could be larger than 159px if all three exist. I just wanted to show off tht range properties you can use. Here, I used <code>isGreaterThan</code>, but <code>isLessThan</code> and <code>isInRange</code> are also available.</p>
 
     <p>There are a few ways to write the same test. Here's another:</p>
 
-    <h3 id="test-layout">Test 4 - Layout with Count</h3>
+    <h3 id="test-layout">Test 4 - Layout Count</h3>
 
     <div class="test layout">
       <div class="flex-container">
@@ -235,7 +239,7 @@
 
     <h3 id="test-event">Test 5 - JavaScript</h3>   
 
-    <div class="test">Open the console, and run <code>testEvent();</code></div>
+    <div class="test">Open the console and run <code>testEvent();</code></div>
 
     <p>Here's how I wrote this test:</p>
 
@@ -252,17 +256,15 @@
 
     <p>If you want to test something tricky, perhaps with JavaScript, you can take advantage of the <code>waitForEvent</code> property. In this case, the test is waiting for the window to dispatch an event called <code>ud-test</code>. As soon as it receives the event, the test passes!</p>
 
-    <p>Of course, if you're running JavaScript, you'll need to control the website and add an extra attribute to the meta tag.</p>
+    <p>Of course, if you're running JavaScript, you'll need to control the website and add an extra attribute (or two) to the meta tag.</p>
 
     <pre>&lt;meta name="udacity-grader" content="tests.json" libraries="jsgrader" unit-tests="unit_tests.js"&gt;</pre>
     
-    <p>This example takes advantage of two new attributes: <code>libraries</code> and <code>unit-tests</code>. Udacity Feedback comes with a JavaScript library for testing,jsgrader, which is what I use for lots of tests on the Udacity site. The file <code>unit_tests.js</code> is just some JavaScript that gets injected into the page. Of course, you can use whatever testing logic you'd like with your <code>unit-tests</code> so long as you communicate when a test <em>passes</em> by dispatching a custom event from the window. This is what my custom event looked like:</p>
+    <p>This example takes advantage of two new attributes: <code>libraries</code> and <code>unit-tests</code>. Udacity Feedback comes with an optional JavaScript library for testing, jsgrader, which is what I use for lots of tests on the Udacity site. The file <code>unit_tests.js</code> is just some JavaScript that gets injected into the page. Of course, you can use whatever testing logic you'd like with your <code>unit-tests</code> so long as you communicate when a test <em>passes</em> by dispatching a custom event from the window. This is what my custom event looked like:</p>
 
     <pre>
       window.dispatchEvent(new CustomEvent('ud-test', {'detail': 'passed'}));
     </pre>
-
-    <h2>Conclusion</h2>
 
     <p>Those are the basics of Udacity Feedback. Now go out there and write some quizzes!</p>
 
