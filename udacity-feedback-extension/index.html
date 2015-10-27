@@ -1,0 +1,272 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="udacity-grader" content="test.json">
+  <title>Sample Tests</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      width: 100%;
+      font-family: 'Roboto Slab', serif;
+    }
+    .main-container {
+      max-width: 40em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .centered-text {
+      text-align: center;
+    }
+    .centered {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .grey {
+      color: #555;
+    }
+    .responsive {
+      max-width: 100%;
+    }
+    .half {
+      width: 50%;
+    }
+    .test-result {
+      background-color: rgb(230,230,230);
+      max-width: 70%;
+      margin-left: 4em;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .test-result.correct {
+      color: #060;
+    }
+    .test-result.incorrect {
+      color: #900;
+    }
+    .test-result.correct:before {
+      content: "✓ ";
+    }
+    .test-result.incorrect:before {
+      content: "✗ ";
+    }
+
+    p.footnote {
+      font-size: 0.75em;
+      font-style: italic;
+    }
+    p.footnote::before {
+      content: "*";
+    }
+    .green {
+      color: #060;
+    }
+
+    .test {
+      border: 1px solid rgba(34,34,34,0.25);
+      border-radius: 2px;
+      
+      box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.5);
+
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      
+      padding: 16px;
+    }
+
+    .flex-container {
+      display: flex;
+    }
+
+    .colored {
+      background-color: #ffc;
+      width: 100%;
+    }
+    .colored:nth-child(even) {
+      background-color: #cfc;
+    }
+  </style>
+<head>
+<body>
+  <div class="main-container">
+    <h1 class="centered-text">How Udacity Feedback Works</h1>
+
+    <ul>
+      <li>Install from the <a href="https://chrome.google.com/webstore/detail/udacity-front-end-feedbac/fcglckhmjjmhkfkkngemmhmcolefiljf" target="_blank">Chrome Web Store</a> ← if you just want to write or run tests</li>
+      <li>Install from <a href="https://github.com/udacity/frontend-grading-engine">source code</a> ← if you want to help improve Udacity Feedback</li>
+    </ul>
+
+    <div><img class="responsive" src="overview.png" alt="screenshot of Feedback"></div>
+
+    <p>Udacity Feedback gives you the ability to write HTML, CSS and JavaScript<super>*</super> tests against any website, whether it's one that you built or a random site on the web.</p>
+
+    <p class="footnote">For security reasons, you can only run JS tests against pages that you own.</p>
+
+    <p>The tests run against the live DOM and display their pass/fail status in a widget on the page.</p>
+
+    <p>You can turn off feedback at any time. In fact, the widget waits for permission before turning on. To turn it on, click on the Udacity logo</p>
+    <img class="responsive centered half" src="arrow-to-browser-action.png" alt="arrow to browser action button">
+
+    <p>and click the checkbox next to "Allow feedback on this domain."</p>
+  
+    <p>You should see a test widget appear with two tests. If not, try reloading the page.</p>
+
+    <h2 id="loading-tests">Loading Tests</h2>
+
+    <p>There are two main methods for load tests against a website. Take a look at the first two tests under Meta Tag:</p>
+
+    <div class="test-result correct">&lt;meta&gt; has name set to udacity-grader</div>
+    <div class="test-result correct">&lt;meta&gt; has a content tag with a link to json</div>
+
+    <h3 id="from-meta">Load from &lt;meta&gt;</h3>
+
+    <p>These two tests are inspecting a meta tag in the head of this document. To automatically run tests against a page that you control, just add this tag to the head:</p>
+
+    <pre>&lt;meta name="udacity-grader" content="relative_path_to_tests.json"&gt;</pre>
+
+    <p>Any tests from the JSON file referenced by the content tag will start running immediately after the page loads. This is how you should load tests against websites that you control. Of course, if you don't control a website, you can't add a meta tag. For that, there's the second method: loading from JSON. Here's a JSON file with some more tests.</p>
+
+    <a href="walkthrough.json" download>Download me!</a>
+    
+    <h3 id="from-json">Load from JSON</h3>
+    <p>Now that you've downloaded the tests, click on the extension again, click 'Load Files' and choose the file that you just downloaded. You should see a lot more tests appear. This is how you load tests against websites that you <em>don't</em> own.</p>
+
+    <p>Great! So now you have a lot more tests. Here's how they work.</p>
+
+    <h2 id="tests">Tests</h2>
+    
+    <h3 id="test-bg-color">Test 1 - CSS</h3>
+
+    <div class="test test1 bg">Change this div's background to <code>rgb(204, 204, 255)</code>!</div>
+
+    <p>Use DevTools to change the background to the color value shown. You should see the test get checked off when you do. Here's how the test was written:</p>
+
+    <pre>
+      description: "Test 1 has correct bg color",
+      "definition": {
+        "nodes": ".test1",
+        "cssProperty": "backgroundColor",
+        "equals": "rgb(204, 204, 255)"
+      }
+    </pre>
+
+    <p>This test checks the background color of <em>every</em> element of returned by the selector <code>.test1</code>. Unless you specify otherwise, <em>all</em> of the elements must pass the test. In this test, you got feedback on background color, but you can write tests against <em>any</em> CSS property.</p>
+
+    <p>Some things to note:</p>
+
+    <ul>
+      <li>Use camelCase for the CSS property you want to test.</li>
+      <li>Only rgb colors are supported (at the moment) - make sure they've got spaces after the commas.</li>
+    </ul>
+
+    So what else can be checked?</p>
+
+    <h3 id="test-innerHTML">Test 2 - innerHTML</h3>
+
+    <div class="test test2 innerHTML">Change my innerHTML to "Hello, world!" (no quotes)</div>    
+
+    <p>Here's how the test was written:</p>
+
+    <pre>
+      "description": "Test 2 says 'Hello, world!'",
+      "definition": {
+        "nodes": ".test2",
+        "get": "innerHTML",
+        "hasSubstring": "^Hello, world!$"
+      }
+    </pre>
+
+    <p>Whoa! Look at that! Regex. Some things to note:</p>
+
+    <ul>
+      <li>There's a <code>get</code> property. Use this to 'get' properties that would otherwise not be classified under CSS styles, attributes, or absolute position. The biggest use cases are innerHTML and count.</li>
+      <li><code>hasSubstring</code> will run a match against a string. If any match groups are returned, the test passes.</li>
+    </ul>
+
+    <p>Ok, enough with the easy tests.</p>
+
+    <h3 id="test-layout">Test 3 - Layout with Width</h3>
+
+    <div class="test layout">
+      <div class="flex-container">
+        <div class="test3 colored">Delete...</div>
+        <div class="test3 colored">...one...</div>
+        <div class="test3 colored">...of us.</div>
+      </div>
+    </div>
+
+    <p>There are a few ways to write this test. This is how I did it:</p>
+
+    <pre>
+      "description": "Test 3 has larger columns",
+      "definition": {
+        "nodes": ".test3.colored",
+        "cssProperty": "width",
+        "isGreaterThan": 159
+      }
+    </pre>
+
+    <p>You may need to resize your browser to a width greater than 640px to pass the test.</p>
+
+    <p>Really, what I'm checking here is that one of the columns has been deleted. They're in a flexbox and none of them could be larger than 159px if all three exist. I just wanted to show off that you've got range properties to take advantage of. Here, I used <code>isGreaterThan</code>, but <code>isLessThan</code> and <code>isInRange</code> are also available.</p>
+
+    <p>There are a few ways to write the same test. Here's another:</p>
+
+    <h3 id="test-layout">Test 4 - Layout with Count</h3>
+
+    <div class="test layout">
+      <div class="flex-container">
+        <div class="test4 colored">Delete...</div>
+        <div class="test4 colored">...one...</div>
+        <div class="test4 colored">...of us.</div>
+      </div>
+    </div>
+
+    <pre>
+      "description": "Test 4 has two columns",
+      "definition": {
+        "nodes": ".test4",
+        "get": "count",
+        "equals": 2
+      }
+    </pre>
+
+    <p>This time, I used the <code>count</code> property to find the number of elements returned from the <code>.test4</code> selector. When it meets the requirements set by <code>equals</code>, the test passes!</p>
+
+    <h3 id="test-event">Test 5 - JavaScript</h3>   
+
+    <div class="test">Open the console, and run <code>testEvent();</code></div>
+
+    <p>Here's how I wrote this test:</p>
+
+    <pre>
+      "description": "Test 5 has been called",
+      "definition": {
+        "waitForEvent": "ud-test",
+        "exists": true
+      },
+      "flags": {
+        "noRepeat": true
+      }
+    </pre>
+
+    <p>If you want to test something tricky, perhaps with JavaScript, you can take advantage of the <code>waitForEvent</code> property. In this case, the test is waiting for the window to dispatch an event called <code>ud-test</code>. As soon as it receives the event, the test passes!</p>
+
+    <p>Of course, if you're running JavaScript, you'll need to control the website and add an extra attribute to the meta tag.</p>
+
+    <pre>&lt;meta name="udacity-grader" content="tests.json" libraries="jsgrader" unit-tests="unit_tests.js"&gt;</pre>
+    
+    <p>This example takes advantage of two new attributes: <code>libraries</code> and <code>unit-tests</code>. Udacity Feedback comes with a JavaScript library for testing,jsgrader, which is what I use for lots of tests on the Udacity site. The file <code>unit_tests.js</code> is just some JavaScript that gets injected into the page. Of course, you can use whatever testing logic you'd like with your <code>unit-tests</code> so long as you communicate when a test <em>passes</em> by dispatching a custom event from the window. This is what my custom event looked like:</p>
+
+    <pre>
+      window.dispatchEvent(new CustomEvent('ud-test', {'detail': 'passed'}));
+    </pre>
+
+    <h2>Conclusion</h2>
+
+    <p>Those are the basics of Udacity Feedback. Now go out there and write some quizzes!</p>
+
+    <p>© Cameron Pittman, Udacity 2015</p>
+  </div>
+  <script src="app.js"></script>
+</body>
