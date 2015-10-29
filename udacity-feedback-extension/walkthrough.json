@@ -21,7 +21,7 @@
     {
       "description": "Test 3 has larger columns",
       "definition": {
-        "nodes": ".test3.colored",
+        "nodes": ".test3",
         "cssProperty": "width",
         "isGreaterThan": 159
       }
