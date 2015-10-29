@@ -1,9 +1,22 @@
+<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="udacity-grader" content="test.json">
   <title>Udacity Feedback Walkthrough</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://lh6.ggpht.com/pXxnDpPZHXnKqBqwvI4cmhsztuM23lbmy0o5zVEZTfXQR69u5Nlx7hfxcCOGZP_Yp_3HwpK3zVAtXejMAg=s0">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@udacity">
+  <meta name="twitter:creator" content="@udacity">
+
+  <link rel="icon" sizes="any" mask href="https://s3-us-west-1.amazonaws.com/udacity-content/images/pinned_icon.svg">
+  <meta name="theme-color" content="#294860">
+  <link rel="shortcut icon" href="/favicon.ico?1b568b3a5b0b2c4a7162c29aeed70961" />
+  <link rel="apple-touch-icon" href="//lh4.ggpht.com/dR8q0uh3GoH-kU00KnQ1elSkqBeWi-ZOQ1_14uDxWRACmhrIDQFOfItKdAf7hngoResshnbb9hmVpPuwkjI=s0#w=152&h=152">
+
   <style>
     body {
       width: 100%;
@@ -95,19 +108,19 @@
     <h1 class="centered-text">How Udacity Feedback Works</h1>
 
     <ul>
-      <li>Install from the <a href="https://chrome.google.com/webstore/detail/udacity-front-end-feedbac/fcglckhmjjmhkfkkngemmhmcolefiljf" target="_blank">Chrome Web Store</a> ← if you just want to write or run tests</li>
+      <li>Install from the <a href="https://chrome.google.com/webstore/detail/udacity-front-end-feedbac/fcglckhmjjmhkfkkngemmhmcolefiljf" target="_blank">Chrome Web Store</a> ← if you just want to run tests</li>
       <li>Install from <a href="https://github.com/udacity/frontend-grading-engine">source code</a> ← if you want to help improve Udacity Feedback</li>
     </ul>
 
     <div><img class="responsive" src="overview.png" alt="screenshot of Feedback"></div>
 
-    <p>Udacity Feedback gives you the ability to write HTML, CSS and JavaScript<super>*</super> tests against any website, whether it's one that you built or a random site on the web.</p>
+    <p>Udacity Feedback gives you the ability to write HTML, CSS and JavaScript<super>*</super> <a href="https://github.com/udacity/frontend-grading-engine#api">tests</a> against any website, whether it's one that you built or a random site on the web.</p>
 
     <p class="footnote">For security reasons, you can only run JS tests against pages that you own.</p>
 
     <p>The tests run against the live DOM and display their pass/fail status in a widget on the page.</p>
 
-    <p>You can turn off feedback at any time. In fact, the widget waits for permission before turning on. To turn it on, click on the Udacity logo</p>
+    <p>If you haven't already, go ahead and <a href="https://chrome.google.com/webstore/detail/udacity-front-end-feedbac/fcglckhmjjmhkfkkngemmhmcolefiljf" target="_blank">install</a> the extension before moving on. You can turn off feedback at any time. In fact, the widget waits for permission before turning on. To turn it on, click on the Udacity logo</p>
     <img class="responsive centered half" src="arrow-to-browser-action.png" alt="arrow to browser action button">
 
     <p>and click the checkbox next to "Allow feedback on this domain."</p>
@@ -266,7 +279,7 @@
       window.dispatchEvent(new CustomEvent('ud-test', {'detail': 'passed'}));
     </pre>
 
-    <p>Those are the basics of Udacity Feedback. Now go out there and write some quizzes!</p>
+    <p>Those are the basics of Udacity Feedback. <a href="https://github.com/udacity/frontend-grading-engine#api">Check out the API</a> to learn more about writing tests!</p>
 
     <p>© Cameron Pittman, Udacity 2015</p>
   </div>
