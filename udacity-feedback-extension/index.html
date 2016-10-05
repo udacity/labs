@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex,follow,noodp">
   <meta name="udacity-grader" content="test.json">
   <title>Udacity Feedback Walkthrough</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
@@ -80,13 +81,13 @@
     .test {
       border: 1px solid rgba(34,34,34,0.25);
       border-radius: 2px;
-      
+
       box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.5);
 
       width: 50%;
       margin-left: auto;
       margin-right: auto;
-      
+
       padding: 16px;
     }
 
@@ -124,7 +125,7 @@
     <img class="responsive centered" src="//lh3.googleusercontent.com/GPFSlZ9i28R88S7Pk3f7aaGOHVfU1CN1IDziG8Y3nivfoAKOTPbM6NXjW9-DhEm19ud1VX9DM8f4MNSW5a0=s1280" alt="arrow to browser action button">
 
     <p>and click the checkbox next to "Allow feedback on this domain."</p>
-  
+
     <p>You should see a test widget appear with two tests. If not, try reloading the page.</p>
 
     <h2 id="loading-tests">Loading Tests</h2>
@@ -141,17 +142,17 @@
     <pre>&lt;meta name="udacity-grader" content="relative_path_to_tests.json"&gt;</pre>
 
     <p>Any tests from the JSON file referenced by the content tag will start running immediately after the page loads. This is how you should load tests against websites that you control. Of course, if you don't control a website, you can't add a meta tag. For that, there's the second method.</p>
-    
+
     <h3 id="from-json">Load from JSON</h3>
 
     <p>Here's a JSON file with some more tests. <a href="walkthrough.json" download>Download me!</a></p>
-    
+
     <p>Now that you've downloaded the tests, click on the extension again, click 'Load Files' and choose the file that you just downloaded. You should see a few more tests appear. This is how you load tests against websites that you <em>don't</em> own.</p>
 
     <p>Great! So now you have some tests. Here's how they work.</p>
 
     <h2 id="tests">Tests</h2>
-    
+
     <h3 id="test-bg-color">Test 1 - CSS</h3>
 
     <div class="test test1 bg">Change this div's background to <code>rgb(204, 204, 255)</code>!</div>
@@ -180,7 +181,7 @@
 
     <h3 id="test-innerHTML">Test 2 - innerHTML</h3>
 
-    <div class="test test2 innerHTML">Change my innerHTML to "Hello, world!" (no quotes)</div>    
+    <div class="test test2 innerHTML">Change my innerHTML to "Hello, world!" (no quotes)</div>
 
     <p>Here's how the test was written:</p>
 
@@ -250,7 +251,7 @@
 
     <p>This time, I used the <code>count</code> property to find the number of elements returned from the <code>.test4</code> selector. When it meets the requirements set by <code>equals</code>, the test passes!</p>
 
-    <h3 id="test-event">Test 5 - JavaScript</h3>   
+    <h3 id="test-event">Test 5 - JavaScript</h3>
 
     <div class="test">Open the console and run <code>testEvent();</code></div>
 
@@ -272,7 +273,7 @@
     <p>Of course, if you're running JavaScript, you'll need to control the website and add an extra attribute (or two) to the meta tag.</p>
 
     <pre>&lt;meta name="udacity-grader" content="tests.json" libraries="jsgrader" unit-tests="unit_tests.js"&gt;</pre>
-    
+
     <p>This example takes advantage of two new attributes: <code>libraries</code> and <code>unit-tests</code>. Udacity Feedback comes with an optional JavaScript library for testing, jsgrader, which is what I use for lots of tests on the Udacity site. The file <code>unit_tests.js</code> is just some JavaScript that gets injected into the page. Of course, you can use whatever testing logic you'd like with your <code>unit-tests</code> so long as you communicate when a test <em>passes</em> by dispatching a custom event from the window. This is what my custom event looked like:</p>
 
     <pre>
